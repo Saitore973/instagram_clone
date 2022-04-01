@@ -5,12 +5,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<style>
+  body{
+    font-family:helvetica;
+  }
+  .navbar{
+    background-color:transparent !important;
+    border: none;
+  }
+  .brand{
+    color: black;
+    list-style: none;
+  }
+  .brand:hover{
+    text-decoration: none;
+  }
+</style>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<nav class="navbar navbar-inverse  ">
+  <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{% url 'welcome' %}">The Moringa Tribune</a>
+      
+      <a class="brand" href="{% url 'welcome' %}"><img src="static/images/gram.png" width="90" height="" alt=""></a>
+
     </div>
+    <form class="navbar-form" role="search" action="">
+
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search Article" name="article">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+          </div>
+
+        </form>
   </div>
 </nav>
 </body>
