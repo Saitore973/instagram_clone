@@ -11,20 +11,22 @@
     font-family: helvetica;
   }
 
-  .container-fluid {
-    text-align: center;
-    border-bottom: 1px solid black;
-  }
+  
 
   .navbar {
     background-color: transparent !important;
     border: none;
+    display: flex;
+    width: 100vw !important;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
   }
 
   .brand {
     color: black;
     list-style: none;
-    margin-left: 100px;
+    margin-right: 120px;
 
   }
 
@@ -33,7 +35,7 @@
   }
 
   .glyphicon {
-    margin-left: 30px;
+    margin-left: 20px;
     float: right;
     margin-top: 10px;
 
@@ -41,6 +43,7 @@
 
   .search {
     margin-top: 7px;
+    margin-right: 30px;
 
   }
 
@@ -54,6 +57,7 @@
     margin-top: 5px
   }
   
+  
 </style>
 
 <body>
@@ -63,13 +67,13 @@
 
       <div class="navbar-header">
 
-        <a class="brand" href="{% url 'welcome' %}"><img class="image" src="static/images/gram.png" width="90" height=""
+        <a class="brand" href="{% url 'welcome' %}"><img class="image" src="../../static/images/gram.png" width="90" height=""
             alt=""></a>
 
       </div>
       <input type="text" class="search" placeholder="Search">
 
-      <span id="icons">
+      <span id="icons" class="icons">
         <a href="#">
           <span class="glyphicon glyphicon-home"></span>
         </a>
@@ -90,6 +94,7 @@
     </div>
     </div>
   </nav>
+ 
   
  
 </body>

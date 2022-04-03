@@ -1,7 +1,7 @@
 from re import M
 from django.db import models
 from django.contrib.auth.models import User
-
+import datetime as dt
 
 # Create your models here.
 class Profile(models.Model):
@@ -15,9 +15,12 @@ class Profile(models.Model):
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to= 'images/', default="Image")
+    image = models.ImageField(upload_to= 'image/', default="Image")
     image_caption= models.TextField()
     likes = models.IntegerField(default="0")
     comments = models.TextField(default="No Comment")
     profile = models.ForeignKey(User, on_delete=models.CASCADE)
     post_date = models.DateTimeField(auto_now_add=True)
+    
+
+    
