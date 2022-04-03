@@ -16,7 +16,6 @@ class Profile(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(upload_to= 'images/', default="Image")
-    image_name= models.CharField(max_length=44)
     image_caption= models.TextField()
     likes = models.IntegerField(default="0")
     comments = models.TextField(default="No Comment")
