@@ -1,105 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<style>
-  body {
-    font-family: helvetica;
-  }
-
-  
-
-  .navbar {
-    background-color: transparent !important;
-    border: none;
-    display: flex;
-    width: 100vw !important;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-  }
-
-  .brand {
-    color: black;
-    list-style: none;
-    margin-right: 120px;
-
-  }
-
-  .brand:hover {
-    text-decoration: none;
-  }
-
-  .glyphicon {
-    margin-left: 20px;
-    float: right;
-    margin-top: 10px;
-
-  }
-
-  .search {
-    margin-top: 7px;
-    margin-right: 30px;
-
-  }
-
-  .image {
-    margin-top: 5px;
-
-  }
-
-  #icons {
-    background-color: red;
-    margin-top: 5px
-  }
-  
-  
-</style>
-
-<body>
-
-  <nav class="navbar navi navbar-inverse  ">
-    <div class="container-fluid">
-
-      <div class="navbar-header">
-
-        <a class="brand" href="{% url 'welcome' %}"><img class="image" src="../../static/images/gram.png" width="90" height=""
-            alt=""></a>
-
-      </div>
-     <div class="mb-0 h1 ml-auto mr-auto" id="searchform" action="{% url 'search' %}" >
+<div class="navbar fixed-top bg-white">
+    <nav class="container">
+      <span class="navbar-brand mb-0 h1">
+          <a href="/">
+              <div id="brand" class="instaicon logo d-none d-sm-block"></div>
+              <div class="instaicon mainicon d-block d-sm-none"></div>
+          </a>
+      </span>
+        <form class="mb-0 h1 ml-auto mr-auto" id="searchform" action="{% url 'search' %}" >
              <input name="search_user" autocomplete="off" id="searching" class="form-control d-none d-md-block" placeholder="Search">
             <i class="spinner "></i>
-        </div>
-
-      <span id="icons" class="icons">
-        <a href="#">
-          <span class="glyphicon glyphicon-home"></span>
-        </a>
-        <a href="#">
-          <span class="glyphicon glyphicon-home"></span>
-        </a>
-        <a href="#">
-          <span class="glyphicon glyphicon-home"></span>
-        </a>
-        <a href="#">
-          <span class="glyphicon glyphicon-home"></span>
-        </a>
-        <a href="#">
-          <span class="glyphicon glyphicon-home"></span>
-        </a>
-      </span>
-    </div>
-    </div>
-    </div>
-  </nav>
- 
-  
- 
-</body>
-
-</html>
+        </form>
+        <span class="pull-right">
+            <div class="instaicon disc"></div>
+            <div class="instaicon like"></div>
+            <a href="{% url 'profile' user.username %}" class="instaicon pers"></a>
+        </span>
+    </nav>
+</div>
