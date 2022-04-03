@@ -9,6 +9,7 @@ django-bootstrap5 = "*"
 django-bootstrap3 = "*"
 psycopg2 = "*"
 pillow = "*"
+django-tinymce = "*"
 
 [dev-packages]
 
