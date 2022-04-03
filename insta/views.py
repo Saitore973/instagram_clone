@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Image,Profile
+from .models import Post,Profile
 # Create your views here.
 def welcome(request):
     return render(request, 'index.html')
 
 def photos(request):
     
-    photos =Image.objects.all()
+    photos =Post.objects.all()
     return render(request, 'all-insta/photos.html', {"photos": photos})
 
 def search_profile(request):
