@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 urlpatterns=[
     path('',views.welcome,name = 'welcome'),
     path('photos/',views.photos,name = 'photos'),
+    path('search/', views.search_profile, name='search'),
 ]
 
 if settings.DEBUG:

@@ -71,7 +71,10 @@
             alt=""></a>
 
       </div>
-      <input type="text" class="search" placeholder="Search">
+     <div class="mb-0 h1 ml-auto mr-auto" id="searchform" action="{% url 'search' %}" >
+             <input name="search_user" autocomplete="off" id="searching" class="form-control d-none d-md-block" placeholder="Search">
+            <i class="spinner "></i>
+        </div>
 
       <span id="icons" class="icons">
         <a href="#">

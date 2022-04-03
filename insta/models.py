@@ -11,8 +11,11 @@ class Profile(models.Model):
     posts = models.IntegerField(default=0)
     followers = models.IntegerField(default=0)
     following = models.IntegerField(default=0)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1, related_name='profile')
 
+    @classmethod
+    def search_profile(cls, name):
+        return cls.objects.filter(user__username__icontains=name).all()
 
 class Image(models.Model):
     image = models.ImageField(upload_to= 'image/', default="Image")
@@ -22,5 +25,6 @@ class Image(models.Model):
     profile = models.ForeignKey(User, on_delete=models.CASCADE)
     post_date = models.DateTimeField(auto_now_add=True)
     
+
 
     
