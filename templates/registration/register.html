@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <!-- <style>
+        .helptext,
+        li {
+            display: none;
+        }
+    </style> -->
+</head>
+
+<body>
+    <section class="signup-section">
+        <form action="" class="signup-form" method="post">
+            {% csrf_token %}
+            <section class=" signup-form-container ">
+                <article class="signup-form-title ">
+                    <h1>Instagram</h1>
+                </article>
+                <article class="signup-form-description ">
+                    <h4>Sign up to see photos and videos from your friends.</h4>
+                </article>
+                {{ form.as_p }}
+                <article class="signup-form-submit ">
+                    <button type="submit ">Sign up</button>
+                </article>
+                <article class="signup-form-terms ">
+                    <p>By signing up, you agree to our <strong>Terms</strong>,<strong>Data</strong>,<strong>Policy</strong> and <strong>Cookies Policy.</strong></p>
+                </article>
+            </section>
+            <article class="signup-login ">
+                <p>Have an account? <a href="{% url 'login' %} ">Log in</a></p>
+            </article>
+        </form>
+
+    </section>
+    <script>
+        $(document).ready(function() {
+            $("#id_username ").attr('placeholder', '{{form.username.label}}');
+            $("#id_email ").attr('placeholder', '{{form.email.label}}');
+            $("#id_password1 ").attr('placeholder', '{{form.password1.label}}');
+            $("#id_password2 ").attr('placeholder', '{{form.password2.label}}');
+        });
+    </script>
+</body>
+
+</html>

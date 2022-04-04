@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link rel="icon" href="{% static 'images/instagram.png' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}"> {% if title %}
+    <title>Instagram - {{ title }}</title>
+    {% else %}
+    <title>Instagram</title>
+    {% endif %} {% block head %} {% endblock %}
+</head>
+
+<body>
+    <section class="nav-container">
+        <nav class="nav">
+            <article class="nav-logo">
+                <h1>Instagram</h1>
+            </article>
+            <article class="nav-search">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="nav-search-image">
+                        <img src="{% static 'images/magnifying-glass.png' %}" alt="search">
+                    </div>
+                    <div class="nav-search-input">
+                        {{searchform}}
+                    </div>
+                </form>
+            </article>
+            <article class="nav-links">
+                <div class="nav-links-home">
+                    <a href="{% url 'home' %}"><img src="{% static 'images/homepage.png' %}" alt="home"></a>
+                </div>
+                <div class="nav-links-create">
+                    <a href="{% url 'create' %}"><img src="{% static 'images/more.png'%}" alt="create"></a>
+                </div>
+                <div class="nav-links-profile">
+                    <div>
+                        <a href="{% url 'profile' user.id %}">
+                            {% if user.id == userid %}
+                                {% if not user.profile.profilePhoto.url %}
+                            <img src="{% static 'images/default.jpg'%}" alt="profile"> {% else %}
+                            <img src="{{user.profile.profilePhoto.url}}" alt="profile"> {% endif %}
+                            {% else %}
+                            <img src="{% static 'images/default.jpg'%}" alt="profile">
+                            {% endif %}
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </nav>
+    </section>
+    {% block content %} {% endblock %}
+</body>
+
+</html>

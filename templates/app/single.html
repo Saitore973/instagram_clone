@@ -1,0 +1,57 @@
+{% extends 'app/layout.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/create.css' %}">
+<link rel="stylesheet" href="{% static 'css/single.css' %}"> {% endblock %} {% block content %}
+<section class="post">
+    <article class="post-container">
+        <div class="post-image">
+            <img src="{{ post.image.url }}" alt="">
+        </div>
+        <div class="post-user">
+            <div class="post-user-name">
+                {% if user.id == userid %} {% if not user.profile.profilePhoto.url %}
+                <img src="{% static 'images/default.jpg'%}" alt="profile"> {% else %}
+                <img src="{{user.profile.profilePhoto.url}}" alt="profile"> {% endif %} {% else %}
+                <img src="{% static 'images/default.jpg'%}" alt="profile"> {% endif %}
+                <h3>{{ post.user.username }}</h3>
+            </div>
+            <div class="post-likes">
+                {% if image.liked.all.count == 1 %}
+                <strong>{{ post.liked.all.count }} like</strong> {% else %}
+                <strong>{{ post.liked.all.count }} likes</strong> {% endif %}
+            </div>
+        </div>
+        <div class="post-title">
+            <p>{{ post.name }}</p>
+        </div>
+        <div class="post-caption">
+            <p>{{ post.caption }}</p>
+        </div>
+        <div class="post-created">
+            <p>{{ post.created }}</p>
+        </div>
+        <div class="post-comment">
+            <form action="{% url 'comment' post.id %}" method="post">
+                {% csrf_token %} {{form}}
+                <button type="submit">Post</button>
+            </form>
+        </div>
+        <div class="post-comments-title">
+            <h1>Comments</h1>
+        </div>
+        <ul class="post-comment-comments">
+            {% for comment in post.comments.all %}
+            <li>
+                <h3>{{ comment.comment }}</h3>
+                <p>--{{ comment.name }}</p>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </article>
+</section>
+<script>
+    $(document).ready(function() {
+        $("#id_comment").attr('placeholder', '{{form.comment.label}}');
+    });
+</script>
+{% endblock %}

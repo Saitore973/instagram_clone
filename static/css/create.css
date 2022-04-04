@@ -1,0 +1,84 @@
+.create {
+    height: calc(90vh - 50px);
+    max-width: 1440px;
+    margin-inline: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-container {
+    border: 1px solid #dbdbdb;
+    width: 95%;
+    max-width: 400px;
+    margin-inline: auto;
+    border-radius: .5rem;
+    box-shadow: 0 0 0.1rem 0.1rem #e6e6e6;
+}
+
+.create-form-title {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    padding: .5rem 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.create-form-image {
+    padding: 0 1rem;
+    margin-top: 1rem;
+}
+
+.create-form-image input {
+    width: 100%;
+}
+
+.create-form-name,
+.create-form-caption,
+.create-form-location {
+    padding: 0 1rem;
+    margin-top: .5rem;
+}
+
+.create-form-submit {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+.create-form-submit button {
+    width: 100%;
+    padding: .3rem 0;
+    background-color: #0095f6;
+    border: 1px solid #0095f6;
+    color: white;
+    border-radius: .3rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.create-form-submit button:hover {
+    background-color: #008ae6;
+    transition: 0.3s ease-in-out;
+}
+
+#id_image,
+#id_name,
+#id_caption {
+    margin-top: .5rem;
+    width: 100%;
+    padding: .5rem .2rem;
+    border-radius: .3rem;
+    border: 1px solid #cccccc;
+}
+
+#id_image:focus,
+#id_name:focus,
+#id_caption:focus {
+    outline: 1px solid #bfbfbf;
+}
+
+#id_caption {
+    resize: vertical;
+}

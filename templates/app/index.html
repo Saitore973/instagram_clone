@@ -1,0 +1,58 @@
+{% extends 'app/layout.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/post.css' %}"> {% endblock %} {% block content %}
+<section class="posts">
+    <article class="post-container">
+        {% for post in posts %}
+        <div class="post">
+            <div class="post-user">
+                <div class="post-user-image">
+                    {% if not post.profile.profilePhoto.url %}
+                    <img src="{% static 'images/default.jpg' %}" alt=""> {% else %}
+                    <img src="{{ post.profile.profilePhoto.url }}" alt="default"> {% endif %}
+                </div>
+                <div class="post-user-name">
+                    <h1>{{post.user}} --<a href="{% url 'profile' post.user.id %}">Follow</a></h1>
+                </div>
+            </div>
+            <div class="post-image">
+                <img src="{{post.image.url}}" alt="pic">
+            </div>
+            <div class="post-features">
+                <form action="{% url 'like' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="image_id" value="{{ post.id }}"> {% if user not in post.liked.all %}
+                    <button type="submit"><img src="{% static 'images/heart(4).png' %}" alt=""></button> {% else %}
+                    <button type="submit"><img src="{% static 'images/heart(3).png' %}" alt=""></button> {% endif %}
+                </form>
+                <a href="{% url 'single' post.id %}"><img src="{% static 'images/bubble-chat.png'%}" alt=""></a>
+            </div>
+            <div class="post-likes">
+                {% if image.liked.all.count == 1 %}
+                <strong>{{ post.liked.all.count }} like</strong> {% else %}
+                <strong>{{ post.liked.all.count }} likes</strong> {% endif %}
+            </div>
+            <div class="post-title">
+                <h4>{{ post.name }}</h4>
+            </div>
+            <div class="post-view-comments">
+                <p><a href="{% url 'single' post.id %}">View Comments</a></p>
+            </div>
+            <div class="post-time">
+                <p>{{ post.created }}</p>
+            </div>
+            <div class="post-comment">
+                <form action="{% url 'comment' post.id %}" method="post">
+                    {% csrf_token %} {{form}}
+                    <button type="submit">Post</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </article>
+</section>
+<script>
+    $(document).ready(function() {
+        $("#id_comment").attr('placeholder', '{{form.comment.label}}');
+    });
+</script>
+{% endblock %}

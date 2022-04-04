@@ -1,0 +1,31 @@
+{% extends 'app/layout.html' %} {% load static %} {% block head %}
+<style>
+    label {
+        display: none;
+    }
+</style>
+<link rel="stylesheet" href="{% static 'css/create.css' %}"> {% endblock %} {% block content %}
+<section class="create">
+    <article class="create-container">
+        <form action="" class="create-form" method="post" enctype=multipart/form-data>
+            {% csrf_token %}
+            <div class="create-form-title">
+                <h1>Create new Post</h1>
+            </div>
+            <div class="create-form-image">
+                {{form.as_p}}
+            </div>
+            <div class="create-form-submit">
+                <button type="submit">Share</button>
+            </div>
+        </form>
+    </article>
+</section>
+<script>
+    $(document).ready(function() {
+        $("#id_comment").attr('placeholder', '{{form.comment.label}}');
+        $("#id_name").attr('placeholder', '{{form.name.label}}');
+        $("#id_caption").attr('placeholder', '{{form.caption.label}}');
+    });
+</script>
+{% endblock %}

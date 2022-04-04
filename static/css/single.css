@@ -1,0 +1,140 @@
+.post {
+    margin-block: 1rem;
+    max-width: 1440px;
+    margin-inline: auto;
+}
+
+.post-container {
+    width: 95%;
+    max-width: 900px;
+    margin-inline: auto;
+    padding: 1rem;
+}
+
+.post-image img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+.post-user {
+    padding: .5rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-user-name {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+
+.post-user img {
+    height: 2rem;
+    width: 2rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.post-user h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: .8rem;
+    padding-left: .5rem;
+}
+
+.post-title {
+    font-weight: 600;
+    padding: .5rem 0;
+}
+
+.post-caption {
+    font-size: .9rem;
+    padding: .3rem 0;
+}
+
+.post-created {
+    font-size: .6rem;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+
+.post-comment {
+    border-top: 1px solid #dbdbdb;
+    padding: .5rem .2rem;
+    margin-top: .5rem;
+}
+
+.post-comment input {
+    width: 90.1%;
+    padding: .3rem;
+    border: none;
+}
+
+.post-comment input:focus {
+    outline: none;
+}
+
+.post-comment button {
+    width: 8.5%;
+    padding: .3rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.post-comment button a {
+    color: blue;
+    transition: 0.3s ease-in-out;
+}
+
+.post-comment button a:hover {
+    color: #0000e6;
+    transition: 0.3s ease-in-out;
+}
+
+.post-comment-comments {
+    margin-block: 1rem;
+    display: -ms-grid;
+    display: grid;
+    gap: .5rem;
+}
+
+.post-comment-comments li {
+    border-radius: .3rem;
+    padding: .5rem .2rem;
+    box-shadow: 0 0 0.2rem 0.2rem #f2f2f2;
+}
+
+.post-comment-comments li h3 {
+    font-size: .8rem;
+    padding-left: .2rem;
+}
+
+.post-comment-comments li p {
+    text-align: right;
+    padding-top: .3rem;
+    padding-right: .2rem;
+    font-size: .7rem;
+}
+
+.post-comments-title {
+    outline: 1px solid #9999ff;
+    border-radius: .2rem;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+@media (min-width: 768px) {
+    .post-comment-comments {
+        display: -ms-grid;
+        display: grid;
+        gap: .5rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

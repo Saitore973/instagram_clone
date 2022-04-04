@@ -1,0 +1,51 @@
+{% extends 'app/layout.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}"> {% endblock %} {% block content %}
+<section class="profile">
+    <article class="profile-container">
+        <div class="profile-image">
+            {% if not profile.profilePhoto.url %}
+            <img src="{% static 'images/default.jpg'%}" alt="profile"> {% else %}
+            <img src="{{profile.profilePhoto.url}}" alt="profile"> {% endif %}
+        </div>
+        <div class="profile-info">
+            <div class="profile-info-name">
+                <div class="profile-info-name-username">
+                    <h1>{{ profile.user }}</h1>
+                </div>
+                {% if profile.user.id == userid %}
+                <div class="profile-info-name-edit">
+                    <button><a href="{% url 'edit' profile.id %}">Edit Profile</a></button>
+                    <button><a href="{% url 'logout' %}">Logout</a></button>
+                </div>
+                {% endif %}
+            </div>
+            <div class="profile-info-bio">
+                <p>{{ profile.bio }}</p>
+            </div>
+            <div class="profile-info-details">
+                <div class="profile-info-details-posts">
+                    <p>{{ profile.profile.all.count }} posts</p>
+                </div>
+                <div class="profile-info-details-followers">
+                    <p>0 followers</p>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+<section class="user-posts">
+    <article class="user-posts-container">
+        <div class="user-posts-title">
+            <img src="{% static 'images/more.png'%}" alt="posts">
+            <h4>Posts</h4>
+        </div>
+        <ul class="user-posts-posts">
+            {% for post in profile.profile.all %}
+            <li class="user-posts-posts-li">
+                <a href="{% url 'single' post.id %}"><img src="{{post.image.url}}" alt=""></a>
+            </li>
+            {% endfor %}
+        </ul>
+    </article>
+</section>
+{% endblock %}

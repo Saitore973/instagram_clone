@@ -1,0 +1,187 @@
+.profile {
+    font-family: 'Nunito', sans-serif;
+}
+
+.profile-container {
+    margin-top: 2rem;
+    width: 95%;
+    max-width: 1000px;
+    margin-inline: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+.profile-image img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid red;
+}
+
+.profile-info {
+    margin-left: 2rem;
+}
+
+.profile-info-name {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+
+.profile-info-name-edit {
+    padding-left: 1rem;
+}
+
+.profile-info-name-edit button {
+    padding: .5rem .4rem;
+    background-color: #0095f6;
+    border: 1px solid #0095f6;
+    color: white;
+    font-weight: 600;
+    border-radius: .2rem;
+    cursor: pointer;
+}
+
+.profile-info-name-edit a {
+    color: white !important;
+}
+
+.profile-info-details {
+    padding-top: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+
+.profile-info-details-posts {
+    padding-right: .2rem;
+    font-size: .7rem;
+    font-weight: 700;
+}
+
+.profile-info-details-followers {
+    padding-right: .2rem;
+    font-size: .7rem;
+    font-weight: 700;
+}
+
+.profile-info-details-following {
+    padding-left: .3rem;
+    font-size: .7rem;
+    font-weight: 700;
+}
+
+.user-posts {
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.user-posts-container {
+    width: 95%;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.user-posts-title {
+    padding: 1rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-posts-title img {
+    height: 1.5rem;
+}
+
+.user-posts-title h4 {
+    padding-left: .5rem;
+}
+
+.user-posts-posts {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.user-posts-posts-li img {
+    width: 100%;
+    height: 300px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .profile-image img {
+        height: 100px;
+        width: 100px;
+    }
+    .profile-container {
+        width: 800px;
+    }
+    .user-posts-posts {
+        grid-template-columns: repeat(2, 1fr);
+        gap: .5rem;
+    }
+}
+
+@media (min-width: 878px) {
+    .profile-image img {
+        height: 150px;
+        width: 150px;
+    }
+    .profile-info {
+        padding-left: 2rem;
+    }
+    .profile-info-name {
+        font-size: 1.8rem;
+    }
+    .profile-info-name-edit {
+        padding-left: 1rem;
+    }
+    .profile-info-name-edit button {
+        padding: .5rem .4rem;
+        background-color: #0095f6;
+        border: 1px solid #0095f6;
+        color: white;
+        font-weight: 600;
+        border-radius: .2rem;
+        cursor: pointer;
+    }
+    .profile-info-details {
+        padding-top: 2rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+    }
+    .profile-info-details-posts {
+        padding-right: 1rem;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .profile-info-details-followers {
+        padding-right: 1rem;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .profile-info-details-following {
+        padding-left: .3rem;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .user-posts-posts {
+        grid-template-columns: repeat(3, 1fr);
+        gap: .5rem;
+    }
+}
+
+
+/*# sourceMappingURL=profile.css.map */

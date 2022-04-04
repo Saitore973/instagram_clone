@@ -1,0 +1,105 @@
+.signup-section {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form {
+    margin-block: 1rem;
+    width: 95%;
+    max-width: 400px;
+    margin-inline: auto;
+}
+
+.signup-form-container {
+    border: 1px solid #dcdcdc;
+    padding: .5rem 2rem;
+    border-radius: .2rem;
+}
+
+.signup-form-title {
+    padding: 1rem 0;
+    text-align: center;
+    font-family: 'Galada', cursive;
+    font-size: 2rem;
+    color: #262626;
+}
+
+.signup-form-description {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    width: 350px;
+    font-size: 1.5rem;
+    margin-inline: auto;
+    color: #9d9d9d;
+    line-height: 35px;
+    margin-bottom: 3rem;
+}
+
+.signup-form input {
+    margin-block: .2rem;
+    width: 100%;
+    border: 1px solid #dcdcdc;
+    padding: .6rem .2rem;
+    border-radius: .2rem;
+}
+
+.signup-form input:focus {
+    outline: 1px solid #999999;
+}
+
+.signup-form-terms {
+    text-align: center;
+    font-size: .7rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.signup-form-submit {
+    margin-block: 2rem;
+}
+
+.signup-form-submit button {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: .4rem 0;
+    color: white;
+    border-radius: .2rem;
+    background-color: #b2dffc;
+    border: 1px solid #b2dffc;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.signup-form-submit button:hover {
+    background-color: #84cbfb;
+    border: 1px solid #84cbfb;
+    transition: 0.3s ease-in-out;
+}
+
+.signup-login {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: 1rem;
+    border: 1px solid #dcdcdc;
+    padding: .5rem 4rem;
+    border-radius: .2rem;
+    font-size: .8rem;
+}
+
+.helptext {
+    display: none;
+}
+
+li {
+    margin-block: .2rem;
+    font-size: .8rem;
+    font-family: 'Nunito', sans-serif;
+}

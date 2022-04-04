@@ -1,0 +1,28 @@
+{% extends 'registration/base.html' %} {% load static %}{% block head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/global.css' %}"> {% endblock %} {% block content %}
+<section class="login-section">
+    <form class="login-form" method="post">
+        <section class="login-form-container">
+            {% csrf_token %}
+            <article class="login-form-title">
+                <h1>Instagram</h1>
+            </article>
+            {{ form.as_p }}
+            <article class="login-form-submit ">
+                <button type="submit ">Log In</button>
+            </article>
+        </section>
+        <article class="login-signup">
+            <p>Don't have an account? <a href="{% url 'register' %}">Sign up</a></p>
+        </article>
+    </form>
+
+</section>
+<script>
+    $(document).ready(function() {
+        $("#id_username").attr('placeholder', '{{form.username.label}}');
+        $("#id_password").attr('placeholder', '{{form.password.label}}');
+    });
+</script>
+{% endblock %}

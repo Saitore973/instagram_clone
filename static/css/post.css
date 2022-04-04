@@ -1,0 +1,115 @@
+.posts {
+    max-width: 1440px;
+    margin-inline: auto;
+}
+
+.post {
+    position: relative;
+    margin-block: 1rem;
+    width: 98%;
+    max-width: 600px;
+    margin-inline: auto;
+    border: 1px solid #dbdbdb;
+    border-radius: .2rem;
+}
+
+.post-user {
+    padding: .7rem .5rem;
+    border-bottom: 1px solid #dbdbdb;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+
+.post-user-image img {
+    border-radius: 50%;
+    border: 1px solid #e6e6e6;
+    height: 2rem;
+    width: 2rem;
+    object-fit: cover;
+}
+
+.post-user-name {
+    padding-left: .5rem;
+    font-size: .7rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.post-image img {
+    width: 100%;
+    height: 400px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.post-features {
+    display: flex;
+}
+
+.post-features img {
+    height: 1.5rem;
+}
+
+.post-features button {
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    margin-right: .5rem;
+}
+
+.post-likes {
+    font-size: .8rem;
+    padding-left: .2rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.post-title {
+    padding-left: .2rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.post-view-comments {
+    padding-top: .5rem;
+    padding-left: .2rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.post-time {
+    padding-top: 1rem;
+    padding-left: .2rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.post-comment {
+    border-top: 1px solid #dbdbdb;
+    padding: .5rem .2rem;
+    margin-top: .5rem;
+}
+
+.post-comment input {
+    width: 90.1%;
+    padding: .3rem;
+    border: none;
+}
+
+.post-comment input:focus {
+    outline: none;
+}
+
+.post-comment button {
+    width: 8.5%;
+    padding: .3rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.post-comment button:hover {
+    color: #0000e6;
+    transition: 0.3s ease-in-out;
+}
