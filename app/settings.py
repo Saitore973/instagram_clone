@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-import cloudinary
+# import cloudinary
 import django_heroku
 import dj_database_url
 from decouple import config, Csv
@@ -162,15 +162,15 @@ django_heroku.settings(locals())
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-cloudinary.config(
-    cloud_name="dnesn8pce", 
-    api_key="588882449298784", 
-    api_secret="tDd9VmBqnNWuc8h1TK4eKB7O41g"
-    # cloud_name=config('YOUR_CLOUD_NAME'),
-    # api_key=config('YOUR_API_KEY'),
-    # api_secret=config('YOUR_API_SECRET'),
-    # secure=True
-)
+# cloudinary.config(
+#     cloud_name="dnesn8pce", 
+#     api_key="588882449298784", 
+#     api_secret="tDd9VmBqnNWuc8h1TK4eKB7O41g"
+#     # cloud_name=config('YOUR_CLOUD_NAME'),
+#     # api_key=config('YOUR_API_KEY'),
+#     # api_secret=config('YOUR_API_SECRET'),
+#     # secure=True
+# )
 
 
 
