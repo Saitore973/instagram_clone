@@ -10,6 +10,8 @@ Users can sign up, login, view and post photos, search and follow other users.
   
 ## Screenshots 
 <img src="static/images/screen1.png" width="900px" height="440px">
+<img src="static/images/screen2.png" width="900px" height="440px">
+<img src="static/images/screen3.png" width="900px" height="440px">
 
 ###### Home page
  
