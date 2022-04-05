@@ -9,6 +9,8 @@ Users can sign up, login, view and post photos, search and follow other users.
  Click [View Site]()  to visit the site
   
 ## Screenshots 
+<img src="images/ig.png" width="900px" height="440px">
+
 ###### Home page
  
 
