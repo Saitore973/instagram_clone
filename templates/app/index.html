@@ -32,7 +32,7 @@
                 <strong>{{ post.liked.all.count }} likes</strong> {% endif %}
             </div>
             <div class="post-title">
-                <h4>{{ post.name }}</h4>
+                <h4>{{ post.caption }}</h4>
             </div>
             <div class="post-view-comments">
                 <p><a href="{% url 'single' post.id %}">View Comments</a></p>
