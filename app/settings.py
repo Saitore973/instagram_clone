@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'clone.apps.CloneConfig',
-    # 'cloudinary',
+    'cloudinary',
     'bootstrap5',
 ]
 
@@ -165,9 +165,9 @@ django_heroku.settings(locals())
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 cloudinary.config(
-    CLOUD_NAME="dnesn8pce", 
-    API_KEY="588882449298784", 
-    API_SECRET="tDd9VmBqnNWuc8h1TK4eKB7O41g" 
+    cloud_name="dnesn8pce", 
+    api_key="588882449298784", 
+    api_secret="tDd9VmBqnNWuc8h1TK4eKB7O41g" 
     # cloud_name=config('YOUR_CLOUD_NAME'),
     # api_key=config('YOUR_API_KEY'),
     # api_secret=config('YOUR_API_SECRET'),
